@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>For My Love ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+            padding: 100px 20px;
+        }
+
+        /* I love you text scattered like plane drawing */
+        .love-text {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.3);
+            font-size: 14px;
+            font-family: 'Comic Sans MS', cursive;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+            transform: rotate(-15deg);
+        }
+
+        /* Cherry blossoms floating */
+        .cherry-blossom {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.5);
+            font-size: 18px;
+            animation: float 7s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Big I LOVE YOUUU arch above envelope */
+        .love-arch {
+            position: absolute;
+            top: -180px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff1493;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+            font-family: 'Comic Sans MS', cursive;
+            z-index: 5;
+            animation: archGlow 2s ease-in-out infinite alternate;
+            letter-spacing: 2px;
+        }
+
+        .love-arch span {
+            display: inline-block;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        .love-arch span:nth-child(1) { animation-delay: 0.1s; transform: rotate(-15deg); }
+        .love-arch span:nth-child(2) { animation-delay: 0.2s; transform: rotate(-10deg); }
+        .love-arch span:nth-child(3) { animation-delay: 0.3s; transform: rotate(-5deg); }
+        .love-arch span:nth-child(4) { animation-delay: 0.4s; transform: rotate(0deg); }
+        .love-arch span:nth-child(5) { animation-delay: 0.5s; transform: rotate(0deg); }
+        .love-arch span:nth-child(6) { animation-delay: 0.6s; transform: rotate(0deg); }
+        .love-arch span:nth-child(7) { animation-delay: 0.7s; transform: rotate(0deg); }
+        .love-arch span:nth-child(8) { animation-delay: 0.8s; transform: rotate(0deg); }
+        .love-arch span:nth-child(9) { animation-delay: 0.9s; transform: rotate(5deg); }
+        .love-arch span:nth-child(10) { animation-delay: 1.0s; transform: rotate(10deg); }
+        .love-arch span:nth-child(11) { animation-delay: 1.1s; transform: rotate(15deg); }
+
+        @keyframes archGlow {
+            0% { text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3); }
+            100% { text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.6), 0 0 15px rgba(255, 20, 147, 0.4); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+            50% { transform: translateY(-8px) rotate(var(--rotation, 0deg)); }
+        }
+
+        /* Floating hearts background */
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.4);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart-small {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.3);
+            font-size: 14px;
+            animation: float 7s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart-large {
+            position: absolute;
+            color: rgba(255, 20, 147, 0.25);
+            font-size: 28px;
+            animation: float 9s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart-purple {
+            position: absolute;
+            color: rgba(147, 112, 219, 0.3);
+            font-size: 18px;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart-red {
+            position: absolute;
+            color: rgba(255, 0, 0, 0.25);
+            font-size: 22px;
+            animation: float 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            top: 10%;
+            left: 50%;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(6) {
+            top: 70%;
+            left: 5%;
+            animation-delay: 5s;
+        }
+
+        .heart:nth-child(7) {
+            top: 40%;
+            left: 90%;
+            animation-delay: 2.5s;
+        }
+
+        .heart:nth-child(8) {
+            top: 90%;
+            left: 60%;
+            animation-delay: 4.5s;
+        }
+
+        .heart:nth-child(9) {
+            top: 15%;
+            left: 45%;
+            animation-delay: 1.5s;
+        }
+
+        .heart:nth-child(10) {
+            top: 45%;
+            left: 25%;
+            animation-delay: 3.5s;
+        }
+
+        .heart:nth-child(11) {
+            top: 75%;
+            left: 85%;
+            animation-delay: 2.8s;
+        }
+
+        .heart:nth-child(12) {
+            top: 35%;
+            left: 15%;
+            animation-delay: 4.2s;
+        }
+
+        .heart:nth-child(13) {
+            top: 55%;
+            left: 75%;
+            animation-delay: 1.8s;
+        }
+
+        .heart:nth-child(14) {
+            top: 85%;
+            left: 35%;
+            animation-delay: 3.2s;
+        }
+
+        .heart:nth-child(15) {
+            top: 25%;
+            left: 65%;
+            animation-delay: 0.8s;
+        }
+
+        .heart:nth-child(16) {
+            top: 65%;
+            left: 45%;
+            animation-delay: 5.2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Cute animated animals */
+        .animal {
+            position: absolute;
+            font-size: 18px;
+            animation: animalFloat 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .animal:nth-child(1) {
+            top: 12%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .animal:nth-child(2) {
+            top: 80%;
+            right: 8%;
+            animation-delay: 3s;
+        }
+
+        .animal:nth-child(3) {
+            top: 50%;
+            left: 2%;
+            animation-delay: 6s;
+        }
+
+        .animal:nth-child(4) {
+            top: 30%;
+            right: 3%;
+            animation-delay: 2s;
+        }
+
+        .animal:nth-child(5) {
+            top: 70%;
+            left: 8%;
+            animation-delay: 4s;
+        }
+
+        .animal:nth-child(6) {
+            top: 20%;
+            right: 12%;
+            animation-delay: 1s;
+        }
+
+        @keyframes animalFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.7;
+            }
+            25% { 
+                transform: translateY(-15px) rotate(-3deg) scale(1.1);
+                opacity: 0.9;
+            }
+            50% { 
+                transform: translateY(-25px) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            75% { 
+                transform: translateY(-10px) rotate(3deg) scale(1.1);
+                opacity: 0.9;
+            }
+        }
+
+        /* Cute bear watching the letter like Snapchat Bitmoji */
+        .watching-bear {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 35px;
+            opacity: 0;
+            transform: scale(0.3) translateY(20px);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s;
+            pointer-events: none;
+            z-index: 20;
+            animation: bearWatch 3s ease-in-out infinite 2.5s;
+            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.3));
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid #ffb6c1;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.3);
+        }
+
+        .envelope.open ~ .watching-bear {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        @keyframes bearWatch {
+            0%, 100% { 
+                transform: scale(1) translateY(0) rotate(0deg);
+            }
+            25% { 
+                transform: scale(1.05) translateY(-2px) rotate(-1deg);
+            }
+            50% { 
+                transform: scale(1) translateY(0) rotate(0deg);
+            }
+            75% { 
+                transform: scale(1.05) translateY(-2px) rotate(1deg);
+            }
+        }
+
+        /* Balloon animations */
+        .balloon {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            transform: translateY(100px) scale(0);
+            animation: balloonFloat 4s ease-out infinite;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .envelope.open ~ .balloon {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        @keyframes balloonFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% { 
+                transform: translateY(-15px) rotate(-2deg) scale(1.05);
+            }
+            50% { 
+                transform: translateY(-25px) rotate(0deg) scale(1);
+            }
+            75% { 
+                transform: translateY(-10px) rotate(2deg) scale(1.05);
+            }
+        }
+
+        .balloon:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .balloon:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .balloon:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .balloon:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .container {
+            position: relative;
+            width: 380px;
+            height: 250px;
+            perspective: 1000px;
+            margin-bottom: 100px;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .envelope-base {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffc1cc, #ffb3c6);
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+        }
+
+        .envelope-base::before {
+            content: '🌸';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .envelope-base::after {
+            content: '🌸';
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, #ffd1dc, #ffc1cc);
+            transform-origin: bottom center;
+            transition: transform 0.8s ease-in-out;
+            z-index: 2;
+            clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        .envelope-flap::before {
+            content: '🌸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(-180deg);
+        }
+
+        .letter {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            background: linear-gradient(135deg, #fef7f7 0%, #fff0f5 50%, #fdf2f8 100%);
+            border: 2px solid #ffc1cc;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #7c2d92;
+            opacity: 0;
+            transform: translateY(100px) scale(0.8);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+            overflow-y: auto;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3), 0 2px 8px rgba(255, 192, 203, 0.2);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 400;
+            z-index: 10;
+        }
+
+        .envelope.open .letter {
+            opacity: 1;
+            transform: translateY(-80px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4), 0 8px 20px rgba(255, 192, 203, 0.3);
+        }
+
+        .letter h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(233, 30, 99, 0.1);
+        }
+
+        .letter p {
+            margin-bottom: 12px;
+            text-align: justify;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            color: #6a1b9a;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+            color: #ad1457;
+            font-weight: 500;
+            font-size: 17px;
+            text-shadow: 0 1px 2px rgba(173, 20, 87, 0.1);
+        }
+
+        /* Interactive hearts that respond to envelope opening */
+        .reactive-heart {
+            position: absolute;
+            color: #ff6b6b;
+            font-size: 16px;
+            opacity: 0;
+            transform: scale(0) rotate(0deg);
+            animation: heartBeat 2s ease-in-out infinite;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+        }
+
+        .envelope.open ~ .reactive-heart {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+            }
+            25% { 
+                transform: scale(1.2) rotate(-5deg);
+            }
+            50% { 
+                transform: scale(1) rotate(0deg);
+            }
+            75% { 
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            color: #ffeb3b;
+            font-size: 12px;
+            animation: sparkle 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        .sparkle:nth-child(1) {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0.5s;
+        }
+
+        .sparkle:nth-child(2) {
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 1.5s;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
+            .container {
+                width: 340px;
+                height: 220px;
+                margin-bottom: 80px;
+            }
+            
+            .letter {
+                font-size: 15px;
+                padding: 18px;
+            }
+            
+            .letter h2 {
+                font-size: 20px;
+            }
+            
+            .envelope.open .letter {
+                transform: translateY(-60px) scale(1.02);
+            }
+            
+            .watching-bear {
+                font-size: 30px;
+                bottom: 15px;
+                right: 15px;
+                padding: 3px;
+            }
+            
+            .love-arch {
+                font-size: 24px;
+                top: -140px;
+                letter-spacing: 1px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                width: 300px;
+                height: 200px;
+                margin-bottom: 60px;
+            }
+            
+            .letter {
+                font-size: 14px;
+                padding: 15px;
+            }
+            
+            .letter h2 {
+                font-size: 18px;
+            }
+            
+            .envelope.open .letter {
+                transform: translateY(-50px) scale(1.02);
+            }
+            
+            .watching-bear {
+                font-size: 25px;
+                bottom: 10px;
+                right: 10px;
+                padding: 2px;
+            }
+            
+            .love-arch {
+                font-size: 20px;
+                top: -120px;
+                letter-spacing: 0.5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- I love you text scattered like plane drawing -->
+    <div class="love-text" style="top: 15%; left: 8%;">I love you</div>
+    <div class="love-text" style="top: 25%; right: 12%; transform: rotate(10deg);">I love you</div>
+    <div class="love-text" style="bottom: 30%; left: 10%; transform: rotate(-8deg);">I love you</div>
+    <div class="love-text" style="bottom: 15%; right: 15%; transform: rotate(12deg);">I love you</div>
+    <div class="love-text" style="top: 45%; left: 5%; transform: rotate(-12deg);">I love you</div>
+    <div class="love-text" style="top: 60%; right: 8%; transform: rotate(8deg);">I love you</div>
+
+    <!-- Cherry blossoms floating -->
+    <div class="cherry-blossom" style="top: 10%; left: 20%; animation-delay: 0s;">🌸</div>
+    <div class="cherry-blossom" style="top: 70%; right: 25%; animation-delay: 2s;">🌸</div>
+    <div class="cherry-blossom" style="top: 30%; left: 80%; animation-delay: 4s;">🌸</div>
+    <div class="cherry-blossom" style="bottom: 25%; left: 15%; animation-delay: 1s;">🌸</div>
+    <div class="cherry-blossom" style="top: 55%; right: 20%; animation-delay: 3s;">🌸</div>
+    <div class="cherry-blossom" style="bottom: 40%; right: 10%; animation-delay: 5s;">🌸</div>
+
+    <!-- Background hearts PLENTY!! -->
+    <!-- Regular hearts -->
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">💝</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💜</div>
+    <div class="heart">🧡</div>
+    <div class="heart" style="top: 22%; left: 37%;">❤️</div>
+    <div class="heart" style="top: 62%; left: 16%;">💕</div>
+    <div class="heart" style="top: 9%; left: 40%;">💖</div>
+    <div class="heart" style="top: 73%; left: 57%;">💝</div>
+    <div class="heart" style="top: 33%; left: 92%;">💗</div>
+    <div class="heart" style="top: 88%; left: 23%;">💓</div>
+    <div class="heart" style="top: 28%; left: 76%;">💜</div>
+    <div class="heart" style="top: 66%; left: 83%;">🧡</div>
+    
+    <!-- Small hearts -->
+    <div class="heart-small" style="top: 15%; left: 22%;">❤️</div>
+    <div class="heart-small" style="top: 35%; left: 8%;">💕</div>
+    <div class="heart-small" style="top: 75%; left: 15%;">💖</div>
+    <div class="heart-small" style="top: 22%; left: 93%;">💝</div>
+    <div class="heart-small" style="top: 58%; left: 32%;">💗</div>
+    <div class="heart-small" style="top: 82%; left: 48%;">💓</div>
+    <div class="heart-small" style="top: 44%; left: 68%;">💜</div>
+    <div class="heart-small" style="top: 12%; left: 72%;">🧡</div>
+    <div class="heart-small" style="top: 92%; left: 12%;">❤️</div>
+    <div class="heart-small" style="top: 8%; left: 55%;">💕</div>
+    <div class="heart-small" style="top: 38%; left: 42%;">💖</div>
+    <div class="heart-small" style="top: 63%; left: 95%;">💝</div>
+    <div class="heart-small" style="top: 29%; left: 18%;">💗</div>
+    <div class="heart-small" style="top: 54%; left: 7%;">💓</div>
+    <div class="heart-small" style="top: 94%; left: 85%;">💜</div>
+    <div class="heart-small" style="top: 18%; left: 63%;">🧡</div>
+    
+    <!-- Large hearts -->
+    <div class="heart-large" style="top: 25%; left: 45%;">❤️</div>
+    <div class="heart-large" style="top: 60%; left: 25%;">💕</div>
+    <div class="heart-large" style="top: 32%; left: 85%;">💖</div>
+    <div class="heart-large" style="top: 75%; left: 62%;">💝</div>
+    <div class="heart-large" style="top: 15%; left: 12%;">💗</div>
+    <div class="heart-large" style="top: 82%; left: 32%;">💓</div>
+    <div class="heart-large" style="top: 42%; left: 55%;">💜</div>
+    <div class="heart-large" style="top: 8%; left: 78%;">🧡</div>
+    
+    <!-- Purple hearts -->
+    <div class="heart-purple" style="top: 33%; left: 27%;">💜</div>
+    <div class="heart-purple" style="top: 68%; left: 43%;">🧡</div>
+    <div class="heart-purple" style="top: 22%; left: 52%;">💜</div>
+    <div class="heart-purple" style="top: 12%; left: 32%;">🧡</div>
+    <div class="heart-purple" style="top: 77%; left: 73%;">💜</div>
+    <div class="heart-purple" style="top: 45%; left: 22%;">🧡</div>
+    <div class="heart-purple" style="top: 87%; left: 55%;">💜</div>
+    <div class="heart-purple" style="top: 55%; left: 83%;">🧡</div>
+    
+    <!-- Red hearts -->
+    <div class="heart-red" style="top: 18%; left: 38%;">❤️</div>
+    <div class="heart-red" style="top: 48%; left: 12%;">❤️</div>
+    <div class="heart-red" style="top: 72%; left: 28%;">❤️</div>
+    <div class="heart-red" style="top: 27%; left: 68%;">❤️</div>
+    <div class="heart-red" style="top: 84%; left: 42%;">❤️</div>
+    <div class="heart-red" style="top: 52%; left: 73%;">❤️</div>
+    <div class="heart-red" style="top: 37%; left: 32%;">❤️</div>
+    <div class="heart-red" style="top: 7%; left: 58%;">❤️</div>
+
+    <!-- Cute animated animals -->
+    <div class="animal">🐰</div>
+    <div class="animal">🐱</div>
+    <div class="animal">🐶</div>
+    <div class="animal">🐼</div>
+    <div class="animal">🦋</div>
+    <div class="animal">🐻</div>
+
+    <!-- Sparkles -->
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+
+    <div class="container">
+        <!-- Big I LOVE YOUUU arch -->
+        <div class="love-arch">
+            <span style="--rotation: -15deg;">I</span>
+            <span style="--rotation: -10deg;"> </span>
+            <span style="--rotation: -5deg;">L</span>
+            <span style="--rotation: 0deg;">O</span>
+            <span style="--rotation: 0deg;">V</span>
+            <span style="--rotation: 0deg;">E</span>
+            <span style="--rotation: 0deg;"> </span>
+            <span style="--rotation: 0deg;">Y</span>
+            <span style="--rotation: 5deg;">O</span>
+            <span style="--rotation: 10deg;">U</span>
+            <span style="--rotation: 15deg;">UUU</span>
+        </div>
+        
+        <div class="envelope" id="envelope">
+            <div class="envelope-base"></div>
+            <div class="envelope-flap"></div>
+            <div class="letter">
+                <h2>ძვირფასო მარი 💕</h2>
+                <p>მარი მინდა გითხრა რო უზოოოოოოოოოომოდ მიყვარხარ ❤️ რაც არ უნდა ვიჩხუბოთ არმინდა რო ჩემი სისულელეების გამო გაწყენინო 💔</p>
+                <p>და ვეცდები ყველანაირად რო უკეთესი შეყვარებული და მეგობარი ვიყო 💖</p>
+                <p>არ მოიწყინო და ნუ მოიღუშები 🥺💕</p>
+                <div class="signature">სიყვარულით, ❤️<br>შენი ნიკუ 💝</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reactive hearts that appear when envelope opens -->
+    <div class="reactive-heart" style="top: 15%; left: 25%;">💕</div>
+    <div class="reactive-heart" style="top: 25%; right: 20%;">❤️</div>
+    <div class="reactive-heart" style="bottom: 30%; left: 15%;">💖</div>
+    <div class="reactive-heart" style="bottom: 20%; right: 25%;">💗</div>
+    <div class="reactive-heart" style="top: 45%; left: 5%;">💝</div>
+    <div class="reactive-heart" style="top: 55%; right: 5%;">💓</div>
+
+    <!-- Balloons that appear when envelope opens -->
+    <div class="balloon" style="top: 10%; left: 15%;">🎈</div>
+    <div class="balloon" style="top: 20%; right: 10%;">🎈</div>
+    <div class="balloon" style="bottom: 35%; left: 8%;">🎈</div>
+    <div class="balloon" style="bottom: 25%; right: 12%;">🎈</div>
+    <div class="balloon" style="top: 60%; left: 3%;">🎈</div>
+    <div class="balloon" style="top: 35%; right: 5%;">🎈</div>
+
+    <!-- Cute bear watching the letter like Snapchat Bitmoji -->
+    <div class="watching-bear">🐻</div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        let isOpen = false;
+
+        envelope.addEventListener('click', function() {
+            isOpen = !isOpen;
+            
+            if (isOpen) {
+                envelope.classList.add('open');
+                // Add sparkle and balloon effects
+                createSparkles();
+                createFloatingBalloons();
+            } else {
+                envelope.classList.remove('open');
+            }
+        });
+
+        // Prevent scrolling on mobile
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        // Create sparkle and balloon effects when opening
+        function createSparkles() {
+            const effects = ['✨', '💕', '❤️', '💖', '🌟', '🎈', '🐰', '🐱', '🐶', '🐼'];
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.innerHTML = effects[Math.floor(Math.random() * effects.length)];
+                    sparkle.style.position = 'absolute';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    sparkle.style.fontSize = '18px';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.animation = 'sparkle 2s ease-out forwards';
+                    sparkle.style.zIndex = '5';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 2000);
+                }, i * 80);
+            }
+        }
+
+        // Create floating balloons and animals when envelope opens
+        function createFloatingBalloons() {
+            const floatingItems = ['🎈', '🎈', '🎈', '🐰', '🐱', '🐶'];
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const item = document.createElement('div');
+                    item.innerHTML = floatingItems[i];
+                    item.style.position = 'absolute';
+                    item.style.left = Math.random() * 80 + 10 + '%';
+                    item.style.top = '100%';
+                    item.style.fontSize = '20px';
+                    item.style.pointerEvents = 'none';
+                    item.style.animation = 'itemRise 4s ease-out forwards';
+                    
+                    // Add CSS for item rise animation
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes itemRise {
+                            0% {
+                                transform: translateY(0) rotate(0deg) scale(1);
+                                opacity: 1;
+                            }
+                            50% {
+                                transform: translateY(-60vh) rotate(${Math.random() * 15 - 7.5}deg) scale(1.2);
+                                opacity: 1;
+                            }
+                            100% {
+                                transform: translateY(-120vh) rotate(${Math.random() * 20 - 10}deg) scale(0.8);
+                                opacity: 0;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    document.body.appendChild(item);
+                    
+                    setTimeout(() => {
+                        item.remove();
+                        style.remove();
+                    }, 4000);
+                }, i * 250);
+            }
+        }
+
+        // Add touch feedback
+        envelope.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+
+        envelope.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
